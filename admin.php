@@ -32,11 +32,11 @@ try {
 }
 
 // Define PHPMailer and Twilio credentials
-define('GMAIL_USERNAME', 'zinboentreprise@gmail.com');
-define('GMAIL_APP_PASSWORD', 'YOUR_GMAIL_APP_PASSWORD'); // Replace with actual app password
-define('TWILIO_ACCOUNT_SID', 'AC7ad73faf129ccfbc1a77c1f6a67edde4');
-define('TWILIO_AUTH_TOKEN', '7b9cfced9791b708d431c5199d4fee2a');
-define('TWILIO_PHONE_NUMBER', '+18564081393');
+define('GMAIL_USERNAME', '');
+define('GMAIL_APP_PASSWORD', ''); // Replace with your actual app password
+define('TWILIO_ACCOUNT_SID', '');
+define('TWILIO_AUTH_TOKEN', '');
+define('TWILIO_PHONE_NUMBER', '');
 file_put_contents(__DIR__ . '/debug.log', '[' . date('Y-m-d H:i:s') . '] [INFO] Credentials defined' . PHP_EOL, FILE_APPEND);
 
 // Include PHPMailer libraries
@@ -82,12 +82,12 @@ use Twilio\Rest\Client;
 
 file_put_contents(__DIR__ . '/debug.log', '[' . date('Y-m-d H:i:s') . '] [INFO] Namespaces imported' . PHP_EOL, FILE_APPEND);
 
-// Define database constants
-define('DB_HOST', 'sql307.infinityfree.com');
-define('DB_USER', 'if0_39009379');
-define('DB_PASS', 'Malinga7');
-define('DB_NAME', 'if0_39009379_zinbconnect');
-define('DB_PORT', 3306);
+// Database configuration
+define('DB_HOST', '');
+define('DB_USER', '');
+define('DB_PASS', '');
+define('DB_NAME', '');
+define('DB_PORT', );
 define('DEBUG_LOG_FILE', __DIR__ . '/debug.log');
 
 // Centralized logging function
@@ -356,7 +356,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         }
                     }
 
-                    // Insert transaction
+                    // Insert transaction into DB
                     $query = "INSERT INTO transactions (reseller_id, subscription_id, buyer_contact, access_code, amount, commission, created_at) VALUES (?, ?, ?, ?, ?, ?, NOW())";
                     $stmt = $conn->prepare($query);
                     if (!$stmt) {
