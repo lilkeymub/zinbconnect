@@ -9,12 +9,12 @@ ini_set('log_errors', '1');
 ini_set('error_log', __DIR__ . '/debug.log');
 error_reporting(E_ALL);
 
-// Database constants
-define('DB_HOST', 'sql307.infinityfree.com');
-define('DB_USER', 'if0_39009379');
-define('DB_PASS', 'Malinga7');
-define('DB_NAME', 'if0_39009379_zinbconnect');
-define('DB_PORT', 3306);
+// Database configuration
+define('DB_HOST', '');
+define('DB_USER', '');
+define('DB_PASS', '');
+define('DB_NAME', '');
+define('DB_PORT', );
 
 function getDBConnection() {
     $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
@@ -142,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         }
                     }
                     
-                    // Simulate payment confirmation
+                    // Payment confirmation
                     logDebug("Sending $contact_type confirmation to $buyer_contact for code $code");
                     
                     // Insert transaction
